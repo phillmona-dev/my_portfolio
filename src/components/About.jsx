@@ -17,7 +17,7 @@ export default function About() {
               <div className="about-accent-block" />
               <div className="about-exp-badge">
                 <div className="num">2+</div>
-                <div className="label">Years<br/>Experience</div>
+                <div className="label">Years<br />Experience</div>
               </div>
             </div>
 
@@ -58,13 +58,13 @@ export default function About() {
                   id="hire-me-btn"
                 >
                   <i className="fas fa-paper-plane" />
-                  Hire Me
+                  Contact Me
                 </a>
                 <a
-                  href="#"
+                  href="/Filimon_Kiros_CV.pdf"
                   className="btn btn-outline"
                   id="download-cv-btn"
-                  download
+                  download="Filimon_Kiros_CV.pdf"
                 >
                   <i className="fas fa-download" />
                   Download CV
