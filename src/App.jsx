@@ -9,6 +9,7 @@ import Projects  from './components/Projects';
 import Interop   from './components/Interop';
 import Contact   from './components/Contact';
 import Footer    from './components/Footer';
+import AiChat    from './components/AiChat';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -46,6 +47,9 @@ export default function App() {
       </main>
 
       <Footer />
+
+      {/* AI Chat Widget */}
+      <AiChat />
 
       {/* Scroll-to-top button */}
       <button

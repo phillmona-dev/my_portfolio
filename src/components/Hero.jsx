@@ -3,8 +3,9 @@ import { Link } from 'react-scroll';
 import profileImg from '../assets/profile.png';
 
 const roles = [
-  'Backend Developer',
+  'Full Stack Engineer',
   'Java & Spring Boot',
+  'React & Next.js Developer',
   'Microservices Architect',
   'Healthcare Tech Expert',
 ];
@@ -80,9 +81,9 @@ export default function Hero() {
             </div>
 
             <p className="hero-desc">
-              Backend developer specializing in Java, Spring Boot, and Microservices.
+              Full Stack Engineer specializing in Java, Spring Boot, React, and Next.js.
               Building enterprise-grade healthcare &amp; insurance systems that serve
-              millions across Ethiopia. Passionate about interoperability and impactful software.
+              millions across Ethiopia. Passionate about end-to-end engineering and impactful software.
             </p>
 
             <div className="hero-actions">
@@ -105,7 +106,7 @@ export default function Hero() {
           <div className="hero-image-wrap">
             <div className="hero-deco d1">&lt;/&gt;</div>
             <div className="hero-photo-ring">
-              <img src={profileImg} alt="Phillmon - Backend Developer" className="hero-photo" />
+              <img src={profileImg} alt="Phillmon - Full Stack Engineer" className="hero-photo" />
             </div>
             <div className="hero-deco d2">{'{}'}</div>
           </div>

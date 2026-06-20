@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1584" />
+  <title>LinkedIn Banner — Filmon Kiros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .banner {
+      width: 1584px;
+      height: 396px;
+      position: relative;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #020812 0%, #040f1f 30%, #051528 55%, #061a30 75%, #071e38 100%);
+      overflow: hidden;
+    }
+
+    /* ── Background layers ── */
+    .bg-glow-left {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 180, 220, 0.06) 0%, transparent 70%);
+      top: -100px;
+      left: -50px;
+      pointer-events: none;
+    }
+
+    .bg-glow-right {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 200, 255, 0.10) 0%, rgba(0, 80, 200, 0.05) 40%, transparent 70%);
+      top: -200px;
+      right: 100px;
+      pointer-events: none;
+    }
+
+    .bg-glow-bottom {
+      position: absolute;
+      width: 400px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 100, 255, 0.05) 0%, transparent 70%);
+      bottom: -100px;
+      right: 300px;
+      pointer-events: none;
+    }
+
+    /* ── Particle dots ── */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 200, 255, 0.35);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50%       { opacity: 0.8; transform: scale(1.3); }
+    }
+
+    /* ── Grid lines (subtle) ── */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ── Left content ── */
+    .left {
+      position: absolute;
+      left: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tag-pill {
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 200, 255, 0.4);
+      background: rgba(0, 200, 255, 0.08);
+      font-size: 11px;
+      font-weight: 600;
+      color: #00d4ff;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34,197,94,0.8);
+    }
+
+    .tag-live {
+      font-size: 11px;
+      color: #86efac;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 74px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 30px rgba(0,200,255,0.15);
+    }
+
+    h1 .accent {
+      background: linear-gradient(90deg, #00d4ff, #0099ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #00d4ff;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #00d4ff, #0066ff);
+      border-radius: 2px;
+      margin-bottom: 18px;
+    }
+
+    .tech-stack {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: nowrap;
+    }
+
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      white-space: nowrap;
+    }
+
+    .tech-sep {
+      color: rgba(0, 200, 255, 0.4);
+      margin: 0 10px;
+      font-size: 13px;
+    }
+
+    .tech-icon {
+      font-size: 14px;
+    }
+
+    /* ── Right — Hex grid visualization ── */
+    .right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 750px;
+      height: 396px;
+      z-index: 5;
+    }
+
+    .hex-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Bottom bar ── */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.40);
+      border-top: 1px solid rgba(0, 200, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 72px;
+      z-index: 20;
+    }
+
+    .bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .green-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34,197,94,0.9);
+    }
+
+    .bottom-text {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.04em;
+    }
+
+    .bottom-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .bottom-link {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+    }
+
+    .bottom-link span {
+      color: rgba(0, 200, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+
+    <!-- Background layers -->
+    <div class="bg-glow-left"></div>
+    <div class="bg-glow-right"></div>
+    <div class="bg-glow-bottom"></div>
+    <div class="grid"></div>
+
+    <!-- Animated particles -->
+    <div class="particles">
+      <div class="dot" style="width:3px;height:3px;top:18%;left:8%;animation-delay:0s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:65%;left:12%;animation-delay:0.7s;"></div>
+      <div class="dot" style="width:4px;height:4px;top:40%;left:20%;animation-delay:1.2s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:75%;left:25%;animation-delay:0.3s;"></div>
+      <div class="dot" style="width:3px;height:3px;top:20%;left:32%;animation-delay:1.8s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:55%;left:38%;animation-delay:0.5s;"></div>
+      <div class="dot" style="width:4px;height:4px;top:30%;left:46%;animation-delay:2.1s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:80%;left:52%;animation-delay:1.0s;"></div>
+      <div class="dot" style="width:3px;height:3px;top:15%;left:60%;animation-delay:0.4s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:70%;left:68%;animation-delay:1.5s;"></div>
+      <div class="dot" style="width:3px;height:3px;top:45%;left:75%;animation-delay:0.9s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:22%;left:82%;animation-delay:2.4s;"></div>
+      <div class="dot" style="width:4px;height:4px;top:60%;left:88%;animation-delay:0.2s;"></div>
+      <div class="dot" style="width:2px;height:2px;top:35%;left:93%;animation-delay:1.7s;"></div>
+    </div>
+
+    <!-- Left content block -->
+    <div class="left">
+      <div class="tag-row">
+        <div class="dot-live"></div>
+        <span class="tag-live">Open to Remote Opportunities</span>
+        <span class="tag-pill">Full Stack Engineer</span>
+      </div>
+
+      <h1>Filmon <span class="accent">Kiros</span></h1>
+      <div class="title">Full Stack Engineer</div>
+      <div class="divider"></div>
+
+      <div class="tech-stack">
+        <div class="tech-item"><span class="tech-icon">☕</span> Java</div>
+        <span class="tech-sep">·</span>
+        <div class="tech-item"><span class="tech-icon">🍃</span> Spring Boot</div>
+        <span class="tech-sep">·</span>
+        <div class="tech-item"><span class="tech-icon">⚛️</span> React</div>
+        <span class="tech-sep">·</span>
+        <div class="tech-item"><span class="tech-icon">🔺</span> Next.js</div>
+        <span class="tech-sep">·</span>
+        <div class="tech-item"><span class="tech-icon">🔗</span> Microservices</div>
+        <span class="tech-sep">·</span>
+        <div class="tech-item"><span class="tech-icon">🐘</span> PostgreSQL</div>
+        <span class="tech-sep">·</span>
+        <div class="tech-item"><span class="tech-icon">🐳</span> Docker</div>
+      </div>
+    </div>
+
+    <!-- Right — SVG Hexagonal Microservices Visualization -->
+    <div class="right">
+      <svg class="hex-svg" viewBox="0 0 750 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Glow filter -->
+          <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glow-node" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+
+          <!-- Gradients -->
+          <linearGradient id="hex-grad-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#0099cc" stop-opacity="0.6"/>
+          </linearGradient>
+          <linearGradient id="hex-grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0066ff" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#0044bb" stop-opacity="0.5"/>
+          </linearGradient>
+          <linearGradient id="hex-grad-dim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#003a6e" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#001f3f" stop-opacity="0.4"/>
+          </linearGradient>
+          <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#0066ff" stop-opacity="0.2"/>
+          </linearGradient>
+          <radialGradient id="center-glow" cx="55%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00aaff" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#00aaff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Central ambient glow -->
+        <ellipse cx="420" cy="198" rx="280" ry="180" fill="url(#center-glow)"/>
+
+        <!-- ── Connection Lines (behind hexagons) ── -->
+        <!-- Main connections -->
+        <line x1="380" y1="198" x2="480" y2="148" stroke="url(#line-grad)" stroke-width="1.5" opacity="0.7" filter="url(#glow-soft)"/>
+        <line x1="380" y1="198" x2="480" y2="248" stroke="url(#line-grad)" stroke-width="1.5" opacity="0.7" filter="url(#glow-soft)"/>
+        <line x1="480" y1="148" x2="580" y2="148" stroke="url(#line-grad)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="480" y1="248" x2="580" y2="248" stroke="url(#line-grad)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="580" y1="148" x2="580" y2="248" stroke="url(#line-grad)" stroke-width="1.2" opacity="0.5"/>
+        <line x1="580" y1="148" x2="650" y2="100" stroke="url(#line-grad)" stroke-width="1.2" opacity="0.5"/>
+        <line x1="580" y1="248" x2="650" y2="298" stroke="url(#line-grad)" stroke-width="1.2" opacity="0.5"/>
+        <line x1="480" y1="148" x2="480" y2="248" stroke="url(#line-grad)" stroke-width="1.0" opacity="0.4"/>
+        <!-- Outer connections -->
+        <line x1="650" y1="100" x2="700" y2="148" stroke="url(#line-grad)" stroke-width="1.0" opacity="0.4"/>
+        <line x1="650" y1="298" x2="700" y2="248" stroke="url(#line-grad)" stroke-width="1.0" opacity="0.4"/>
+        <line x1="700" y1="148" x2="700" y2="248" stroke="url(#line-grad)" stroke-width="1.0" opacity="0.3"/>
+        <!-- Extra web -->
+        <line x1="380" y1="198" x2="300" y2="150" stroke="url(#line-grad)" stroke-width="1.0" opacity="0.3"/>
+        <line x1="380" y1="198" x2="300" y2="250" stroke="url(#line-grad)" stroke-width="1.0" opacity="0.3"/>
+
+        <!-- ── Hexagon helper macro (drawn manually) ── -->
+        <!-- Hex size=48, flat-top, center coordinates -->
+
+        <!-- HEX: CENTER MAIN (teal, largest) cx=380 cy=198 r=52 -->
+        <polygon
+          points="380,146 425,172 425,224 380,250 335,224 335,172"
+          fill="rgba(0,180,220,0.12)"
+          stroke="url(#hex-grad-teal)"
+          stroke-width="2"
+          filter="url(#glow-strong)"
+        />
+        <!-- Icon: microservices/API symbol -->
+        <text x="380" y="207" text-anchor="middle" font-size="32" font-family="serif" fill="#00d4ff" filter="url(#glow-strong)">⬡</text>
+        <text x="380" y="204" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="monospace">API</text>
+
+        <!-- HEX: TOP-RIGHT (teal bright) cx=480 cy=148 r=44 -->
+        <polygon
+          points="480,104 518,126 518,170 480,192 442,170 442,126"
+          fill="rgba(0,180,220,0.15)"
+          stroke="url(#hex-grad-teal)"
+          stroke-width="2"
+          filter="url(#glow-strong)"
+        />
+        <!-- Java icon -->
+        <text x="480" y="158" text-anchor="middle" font-size="28" fill="#00d4ff" filter="url(#glow-strong)">☕</text>
+
+        <!-- HEX: BOTTOM-RIGHT (blue) cx=480 cy=248 r=44 -->
+        <polygon
+          points="480,204 518,226 518,270 480,292 442,270 442,226"
+          fill="rgba(0,100,220,0.14)"
+          stroke="url(#hex-grad-blue)"
+          stroke-width="2"
+          filter="url(#glow-strong)"
+        />
+        <!-- Docker icon -->
+        <text x="480" y="258" text-anchor="middle" font-size="28" fill="#0099ff" filter="url(#glow-strong)">🐳</text>
+
+        <!-- HEX: RIGHT-TOP (medium teal) cx=580 cy=148 r=40 -->
+        <polygon
+          points="580,108 615,128 615,168 580,188 545,168 545,128"
+          fill="rgba(0,80,160,0.18)"
+          stroke="url(#hex-grad-blue)"
+          stroke-width="1.5"
+          filter="url(#glow-soft)"
+        />
+        <!-- DB icon -->
+        <text x="580" y="158" text-anchor="middle" font-size="24" fill="#00bbee" filter="url(#glow-soft)">🗄</text>
+
+        <!-- HEX: RIGHT-BOTTOM (medium blue) cx=580 cy=248 r=40 -->
+        <polygon
+          points="580,208 615,228 615,268 580,288 545,268 545,228"
+          fill="rgba(0,60,140,0.18)"
+          stroke="url(#hex-grad-blue)"
+          stroke-width="1.5"
+          filter="url(#glow-soft)"
+        />
+        <!-- Spring icon -->
+        <text x="580" y="258" text-anchor="middle" font-size="24" fill="#6db33f" filter="url(#glow-soft)">🍃</text>
+
+        <!-- HEX: FAR TOP-RIGHT (dim) cx=650 cy=100 r=34 -->
+        <polygon
+          points="650,66 684,85 684,123 650,142 616,123 616,85"
+          fill="rgba(0,50,110,0.20)"
+          stroke="rgba(0,150,220,0.5)"
+          stroke-width="1.2"
+        />
+        <text x="650" y="110" text-anchor="middle" font-size="18" fill="rgba(0,200,255,0.7)">☁</text>
+
+        <!-- HEX: FAR BOTTOM-RIGHT (dim) cx=650 cy=298 r=34 -->
+        <polygon
+          points="650,264 684,283 684,321 650,340 616,321 616,283"
+          fill="rgba(0,50,110,0.20)"
+          stroke="rgba(0,150,220,0.5)"
+          stroke-width="1.2"
+        />
+        <text x="650" y="308" text-anchor="middle" font-size="18" fill="rgba(0,200,255,0.7)">🔐</text>
+
+        <!-- HEX: FAR RIGHT MIDDLE (tiny, dim) cx=710 cy=198 r=28 -->
+        <polygon
+          points="710,170 738,186 738,214 710,230 682,214 682,186"
+          fill="rgba(0,30,80,0.25)"
+          stroke="rgba(0,120,200,0.35)"
+          stroke-width="1.0"
+        />
+        <text x="710" y="205" text-anchor="middle" font-size="14" fill="rgba(0,180,255,0.5)">⚙</text>
+
+        <!-- HEX: LEFT FAINT cx=300 cy=150 r=28 -->
+        <polygon
+          points="300,122 328,138 328,166 300,182 272,166 272,138"
+          fill="rgba(0,20,60,0.25)"
+          stroke="rgba(0,100,180,0.3)"
+          stroke-width="1.0"
+          opacity="0.6"
+        />
+
+        <!-- HEX: LEFT-BOTTOM FAINT cx=300 cy=250 r=28 -->
+        <polygon
+          points="300,222 328,238 328,266 300,282 272,266 272,238"
+          fill="rgba(0,20,60,0.25)"
+          stroke="rgba(0,100,180,0.3)"
+          stroke-width="1.0"
+          opacity="0.6"
+        />
+
+        <!-- ── Floating orbit dots (decorative) ── -->
+        <circle cx="445" cy="185" r="3.5" fill="#00d4ff" opacity="0.9" filter="url(#glow-node)"/>
+        <circle cx="530" cy="196" r="2.5" fill="#0088ff" opacity="0.8" filter="url(#glow-node)"/>
+        <circle cx="615" cy="198" r="2" fill="#00d4ff" opacity="0.6"/>
+        <circle cx="415" cy="240" r="2.5" fill="#00d4ff" opacity="0.7" filter="url(#glow-node)"/>
+        <circle cx="535" cy="130" r="2" fill="#00aaff" opacity="0.6"/>
+        <circle cx="535" cy="268" r="2" fill="#0077ff" opacity="0.6"/>
+
+        <!-- Animated pulse ring around center hex -->
+        <circle cx="380" cy="198" r="66" fill="none" stroke="rgba(0,200,255,0.2)" stroke-width="1.5" stroke-dasharray="6,6"/>
+        <circle cx="380" cy="198" r="80" fill="none" stroke="rgba(0,150,220,0.1)" stroke-width="1" stroke-dasharray="3,8"/>
+      </svg>
+    </div>
+
+    <!-- Bottom info bar -->
+    <div class="bottom-bar">
+      <div class="bottom-left">
+        <div class="green-dot"></div>
+        <span class="bottom-text">Open to Remote · Full Stack Engineering · Java · React · Next.js · International Opportunities</span>
+      </div>
+      <div class="bottom-right">
+        <span class="bottom-link">💻 <span>github.com/filmonkiros</span></span>
+        <span class="bottom-link">📩 <span>phillipos1212@gmail.com</span></span>
+        <span class="bottom-link">🌐 <span>linkedin.com/in/filmonkiros</span></span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

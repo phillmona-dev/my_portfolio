@@ -13,7 +13,7 @@ export default function About() {
           <div className="about-grid">
             {/* Image */}
             <div className="about-image-wrap">
-              <img src={profileImg} alt="Phillmon - Backend Developer" className="about-photo" />
+              <img src={profileImg} alt="Phillmon - Full Stack Engineer" className="about-photo" />
               <div className="about-accent-block" />
               <div className="about-exp-badge">
                 <div className="num">2+</div>
@@ -27,12 +27,12 @@ export default function About() {
                 <i className="fas fa-user" />
                 About Me
               </span>
-              <h3>Backend Developer building <span style={{ color: 'var(--accent)' }}>impactful systems</span> for Ethiopia</h3>
+              <h3>Full Stack Engineer building <span style={{ color: 'var(--accent)' }}>impactful systems</span> for Ethiopia</h3>
 
               <p>
-                I'm a passionate backend developer with over 2 years of hands-on experience building
+                I'm a passionate full stack engineer with over 2 years of hands-on experience building
                 enterprise-grade systems in the healthcare and insurance sectors. I specialize in
-                Java, Spring Boot, and Microservices architecture.
+                Java, Spring Boot, React, Next.js, and Microservices architecture.
               </p>
               <p>
                 From powering insurance platforms for Niyala Insurance to building pharmacy
@@ -41,14 +41,14 @@ export default function About() {
               </p>
 
               <ul className="about-list">
-                <li><i className="fas fa-check-circle" /> Java & Spring Boot</li>
+                <li><i className="fas fa-check-circle" /> Java &amp; Spring Boot</li>
+                <li><i className="fas fa-check-circle" /> React &amp; Next.js</li>
                 <li><i className="fas fa-check-circle" /> Microservices Design</li>
-                <li><i className="fas fa-check-circle" /> REST APIs & OpenAPI</li>
+                <li><i className="fas fa-check-circle" /> REST APIs &amp; OpenAPI</li>
                 <li><i className="fas fa-check-circle" /> HL7 / Interoperability</li>
-                <li><i className="fas fa-check-circle" /> PostgreSQL & MySQL</li>
-                <li><i className="fas fa-check-circle" /> Docker & DevOps</li>
+                <li><i className="fas fa-check-circle" /> PostgreSQL &amp; MySQL</li>
+                <li><i className="fas fa-check-circle" /> Docker &amp; DevOps</li>
                 <li><i className="fas fa-check-circle" /> Digital Payments</li>
-                <li><i className="fas fa-check-circle" /> Odoo ERP</li>
               </ul>
 
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

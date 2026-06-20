@@ -9,7 +9,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'Microservices', 'PostgreSQL', 'REST API'],
     live: 'https://agency.niscofetap.com/',
     status: 'live',
-    role: 'Backend Developer',
+    role: 'Full Stack Engineer',
   },
   {
     id: 'kpms',
@@ -21,7 +21,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'MySQL', 'Microservices', 'REST API'],
     live: 'https://rx.kenemapharmacy.com/',
     status: 'live',
-    role: 'Backend Developer',
+    role: 'Full Stack Engineer',
   },
   {
     id: 'alert-hms',
@@ -33,7 +33,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'PostgreSQL', 'EMR', 'HL7'],
     live: null,
     status: 'deployed',
-    role: 'Backend Developer',
+    role: 'Full Stack Engineer',
   },
   {
     id: 'healthconnect',
@@ -45,7 +45,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'Microservices', 'HL7', 'Interoperability', 'REST API'],
     live: 'https://hc.kenemapharmacy.com/',
     status: 'live',
-    role: 'Backend + Interoperability',
+    role: 'Full Stack + Interoperability',
   },
   {
     id: 'cbhi',
@@ -57,7 +57,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Microservices', 'Scalability'],
     live: 'https://addistest.cbhi.et/',
     status: 'live',
-    role: 'Backend Developer',
+    role: 'Full Stack Engineer',
   },
   {
     id: 'awash-claims',
@@ -69,7 +69,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'Microservices', 'PostgreSQL'],
     live: null,
     status: 'dev',
-    role: 'Backend Developer',
+    role: 'Full Stack Engineer',
   },
   {
     id: 'niyala-claims',
@@ -81,7 +81,7 @@ const projects = [
     tags: ['Java', 'Spring Boot', 'OpenFn', 'REST API', 'Microservices'],
     live: null,
     status: 'dev',
-    role: 'Backend Developer',
+    role: 'Full Stack Engineer',
   },
 ];
 

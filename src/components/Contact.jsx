@@ -35,7 +35,7 @@ export default function Contact() {
             <p>
               I'm always excited to connect with fellow developers, potential clients,
               and tech enthusiasts. Whether you have a project in mind, want to discuss
-              backend architecture, or just want to say hi — my inbox is open.
+              full stack architecture, or just want to say hi — my inbox is open.
             </p>
             <p>
               Currently based in <strong>Addis Ababa, Ethiopia</strong> and open to
@@ -187,7 +187,7 @@ export default function Contact() {
               color: 'var(--text-secondary)',
             }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', flexShrink: 0, boxShadow: '0 0 6px #22c55e' }} />
-              Currently available for backend development projects &amp; collaborations
+              Currently available for full stack development projects &amp; collaborations
             </div>
           </div>
         </div>

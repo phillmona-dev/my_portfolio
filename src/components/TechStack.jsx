@@ -1,10 +1,11 @@
 const techItems = [
   { icon: '☕', name: 'Java', color: '#f89820', level: 90 },
   { icon: '🍃', name: 'Spring Boot', color: '#6db33f', level: 88 },
+  { icon: '⚛️', name: 'React', color: '#61dafb', level: 78 },
+  { icon: '🔺', name: 'Next.js', color: '#ffffff', level: 72 },
   { icon: '🔗', name: 'Microservices', color: '#e8533a', level: 85 },
   { icon: '🐍', name: 'Python', color: '#3572A5', level: 65 },
-  { icon: '⚛️', name: 'React', color: '#61dafb', level: 55 },
-  { icon: '🟨', name: 'JavaScript', color: '#f7df1e', level: 70 },
+  { icon: '🟨', name: 'JavaScript', color: '#f7df1e', level: 75 },
   { icon: '🟣', name: 'Odoo', color: '#714B67', level: 72 },
   { icon: '🔌', name: 'OpenFn', color: '#e8533a', level: 80 },
   { icon: '🐘', name: 'PostgreSQL', color: '#336791', level: 78 },
@@ -38,7 +39,7 @@ export default function TechStack() {
             <div className="section-line" />
             <h2 className="section-title">Tech <span>Stack</span></h2>
             <p className="section-subtitle">
-              Tools and technologies I work with daily to build scalable systems
+              Tools and technologies I use daily to build scalable full stack systems
             </p>
           </div>
           <div className="tech-grid">
