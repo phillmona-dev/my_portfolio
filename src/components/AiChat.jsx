@@ -22,10 +22,11 @@ LINKEDIN: linkedin.com/in/filmon-kiros-a799252b0
 EXPERIENCE: 2+ years of professional software engineering experience
 
 TECH STACK:
-- Backend: Java, Spring Boot, Microservices Architecture, REST APIs, JPA/Hibernate
+- Backend: Java, Spring Boot, Spring AI, Microservices Architecture, REST APIs, JPA/Hibernate
 - Frontend: React.js, Next.js, JavaScript ES6+, HTML5, CSS3
-- Databases: PostgreSQL, MySQL
-- Tools: Git, Docker, IntelliJ IDEA, VS Code
+- Databases: PostgreSQL, MySQL, Redis
+- DevOps & Cloud: Docker, Kubernetes, CI/CD, Observability, Cloud Deployment (AWS, GCP, Azure)
+- Tools: Git, Docker, Kubernetes, IntelliJ IDEA, VS Code
 - Specialties: Healthcare Tech, Insurance Systems, Enterprise Software, Interoperability HL7 FHIR, NHIA
 
 KEY PROJECTS AND EXPERIENCE:

@@ -32,7 +32,8 @@ export default function About() {
               <p>
                 I'm a passionate full stack engineer with over 2 years of hands-on experience building
                 enterprise-grade systems in the healthcare and insurance sectors. I specialize in
-                Java, Spring Boot, React, Next.js, and Microservices architecture.
+                Java, Spring Boot &amp; Spring AI, Microservices, React &amp; Next.js, Docker, Kubernetes,
+                CI/CD, Cloud Deployment (AWS, GCP, Azure), Observability, and DevOps.
               </p>
               <p>
                 From powering insurance platforms for Niyala Insurance to building pharmacy
@@ -41,14 +42,14 @@ export default function About() {
               </p>
 
               <ul className="about-list">
-                <li><i className="fas fa-check-circle" /> Java &amp; Spring Boot</li>
+                <li><i className="fas fa-check-circle" /> Java, Spring Boot &amp; Spring AI</li>
+                <li><i className="fas fa-check-circle" /> Microservices &amp; REST APIs</li>
                 <li><i className="fas fa-check-circle" /> React &amp; Next.js</li>
-                <li><i className="fas fa-check-circle" /> Microservices Design</li>
-                <li><i className="fas fa-check-circle" /> REST APIs &amp; OpenAPI</li>
-                <li><i className="fas fa-check-circle" /> HL7 / Interoperability</li>
-                <li><i className="fas fa-check-circle" /> PostgreSQL &amp; MySQL</li>
-                <li><i className="fas fa-check-circle" /> Docker &amp; DevOps</li>
-                <li><i className="fas fa-check-circle" /> Digital Payments</li>
+                <li><i className="fas fa-check-circle" /> Docker, Kubernetes &amp; CI/CD</li>
+                <li><i className="fas fa-check-circle" /> Cloud (AWS, GCP, Azure)</li>
+                <li><i className="fas fa-check-circle" /> Observability &amp; DevOps</li>
+                <li><i className="fas fa-check-circle" /> HL7 / FHIR Interoperability</li>
+                <li><i className="fas fa-check-circle" /> PostgreSQL, MySQL &amp; Redis</li>
               </ul>
 
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

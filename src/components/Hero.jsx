@@ -4,10 +4,12 @@ import profileImg from '../assets/profile.png';
 
 const roles = [
   'Full Stack Engineer',
-  'Java & Spring Boot',
+  'Java, Spring Boot & Spring AI',
   'React & Next.js Developer',
   'Microservices Architect',
-  'Healthcare Tech Expert',
+  'Docker, Kubernetes, CI/CD',
+  'Cloud Deployment (AWS, GCP, Azure)',
+  'Observability & DevOps',
 ];
 
 function useTypingEffect(words, speed = 100, pause = 2000) {
@@ -81,9 +83,9 @@ export default function Hero() {
             </div>
 
             <p className="hero-desc">
-              Full Stack Engineer specializing in Java, Spring Boot, React, and Next.js.
-              Building enterprise-grade healthcare &amp; insurance systems that serve
-              millions across Ethiopia. Passionate about end-to-end engineering and impactful software.
+              Full Stack Engineer specializing in Java, Spring Boot &amp; Spring AI, Microservices, React, and Next.js.
+              Experienced in Docker, Kubernetes, CI/CD, Observability, and Cloud Deployment (AWS, GCP, Azure) to build
+              scalable enterprise-grade systems.
             </p>
 
             <div className="hero-actions">

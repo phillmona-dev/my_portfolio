@@ -1,17 +1,16 @@
 const techItems = [
   { icon: '☕', name: 'Java', color: '#f89820', level: 90 },
-  { icon: '🍃', name: 'Spring Boot', color: '#6db33f', level: 88 },
-  { icon: '⚛️', name: 'React', color: '#61dafb', level: 78 },
-  { icon: '🔺', name: 'Next.js', color: '#ffffff', level: 72 },
+  { icon: '🍃', name: 'Spring Boot & Spring AI', color: '#6db33f', level: 88 },
+  { icon: '⚛️', name: 'React & Next.js', color: '#61dafb', level: 78 },
   { icon: '🔗', name: 'Microservices', color: '#e8533a', level: 85 },
-  { icon: '🐍', name: 'Python', color: '#3572A5', level: 65 },
-  { icon: '🟨', name: 'JavaScript', color: '#f7df1e', level: 75 },
-  { icon: '🟣', name: 'Odoo', color: '#714B67', level: 72 },
-  { icon: '🔌', name: 'OpenFn', color: '#e8533a', level: 80 },
-  { icon: '🐘', name: 'PostgreSQL', color: '#336791', level: 78 },
-  { icon: '🐳', name: 'Docker', color: '#2496ed', level: 70 },
+  { icon: '☸️', name: 'Kubernetes', color: '#326ce5', level: 70 },
+  { icon: '♾️', name: 'CI/CD & DevOps', color: '#2088FF', level: 75 },
+  { icon: '☁️', name: 'AWS, GCP, Azure', color: '#FF9900', level: 72 },
+  { icon: '📊', name: 'Observability', color: '#E6522C', level: 70 },
+  { icon: '🐳', name: 'Docker', color: '#2496ed', level: 80 },
+  { icon: '🐘', name: 'PostgreSQL & MySQL', color: '#336791', level: 78 },
   { icon: '📡', name: 'REST API', color: '#e8533a', level: 92 },
-  { icon: '🔐', name: 'Spring Security', color: '#6db33f', level: 82 },
+  { icon: '🔌', name: 'OpenFn & Interop', color: '#e8533a', level: 80 },
 ];
 
 const tickerItems = [...techItems, ...techItems];

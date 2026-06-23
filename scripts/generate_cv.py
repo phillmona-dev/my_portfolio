@@ -40,7 +40,7 @@ class NumberedCanvas(canvas.Canvas):
         self.line(40, 35, 555, 35) # Left margin: 40pt, Right margin: 40pt (595.28 - 40 = 555.28)
         
         # Left side: Resume identification
-        self.drawString(40, 22, "Filimon Kiros — Professional CV  |  Backend Software Developer")
+        self.drawString(40, 22, "Filimon Kiros — Professional CV  |  Full Stack Engineer")
         
         # Right side: Dynamic page count
         page_text = f"Page {self._pageNumber} of {page_count}"
@@ -167,7 +167,7 @@ def generate_pdf(output_path):
 
     # --- PAGE 1: HEADER & CONTACT INFO ---
     story.append(Paragraph("FILIMON KIROS", name_style))
-    story.append(Paragraph("BACKEND SOFTWARE DEVELOPER", sub_style))
+    story.append(Paragraph("FULL STACK ENGINEER", sub_style))
 
     contact_html = (
         "Email: <a href=\"mailto:phillipos1212@gmail.com\"><font color=\"#e8533a\"><b>phillipos1212@gmail.com</b></font></a>   |   "
@@ -205,11 +205,11 @@ def generate_pdf(output_path):
     # --- PROFESSIONAL SUMMARY ---
     add_section("PROFESSIONAL SUMMARY")
     summary_text = (
-        "Highly skilled and detail-oriented Backend Software Developer with over 2 years of hands-on "
+        "Highly skilled and detail-oriented Full Stack Engineer with over 2 years of hands-on "
         "experience building enterprise-grade, scalable, and secure systems in the healthcare and insurance sectors. "
-        "Specializes in Java, Spring Boot, and Microservices architecture. Proven expertise in healthcare interoperability "
-        "standards (HL7 FHIR), digital payment integrations, and Odoo ERP customization. Adaptable developer with a "
-        "strong track record of delivering impactful software solutions that serve millions of users across Ethiopia."
+        "Specializes in Java, Spring Boot, Spring AI, Microservices, React, and Next.js. Proven expertise in "
+        "Docker, Kubernetes, CI/CD pipelines, Cloud Deployment (AWS, GCP, Azure), and Observability & DevOps. "
+        "Strong track record of delivering impactful software solutions that serve millions of users across Ethiopia."
     )
     story.append(Paragraph(summary_text, body_style))
     story.append(Spacer(1, 6))
@@ -217,11 +217,11 @@ def generate_pdf(output_path):
     # --- TECHNICAL SKILLS ---
     add_section("TECHNICAL SKILLS")
     skills_data = [
-        [Paragraph("<b>Programming Languages:</b>", body_style), Paragraph("Java, Python, JavaScript (ES6+), C, C++, PHP, SQL", body_style)],
-        [Paragraph("<b>Frameworks & Libraries:</b>", body_style), Paragraph("Spring Boot, Spring MVC, Spring Security, Spring Cloud, React, Odoo ERP", body_style)],
-        [Paragraph("<b>Databases:</b>", body_style), Paragraph("PostgreSQL, MySQL, SQL Server, MongoDB, SQLite", body_style)],
-        [Paragraph("<b>Tools & DevOps:</b>", body_style), Paragraph("Docker, Git, AWS, Azure DevOps, JIRA, OpenAPI / Swagger", body_style)],
-        [Paragraph("<b>Interoperability & APIs:</b>", body_style), Paragraph("HL7 FHIR, OpenFn Integration Platform, RESTful APIs, Webhooks, Chapa API", body_style)]
+        [Paragraph("<b>Programming Languages:</b>", body_style), Paragraph("Java, Python, JavaScript (ES6+), TypeScript, SQL", body_style)],
+        [Paragraph("<b>Frameworks & Libraries:</b>", body_style), Paragraph("Spring Boot, Spring AI, Spring Security, Spring Cloud, React, Next.js", body_style)],
+        [Paragraph("<b>Databases & Caching:</b>", body_style), Paragraph("PostgreSQL, MySQL, MongoDB, Redis, SQL Server", body_style)],
+        [Paragraph("<b>DevOps & Observability:</b>", body_style), Paragraph("Docker, Kubernetes, CI/CD (GitHub Actions, Azure DevOps), Prometheus, Grafana", body_style)],
+        [Paragraph("<b>Cloud & Interop:</b>", body_style), Paragraph("AWS, GCP, Azure, HL7 FHIR, OpenFn Integration Platform, REST APIs, Chapa API", body_style)]
     ]
     skills_table = Table(skills_data, colWidths=[130, 385])
     skills_table.setStyle(TableStyle([
@@ -268,7 +268,7 @@ def generate_pdf(output_path):
 
     # --- PAGE 2: EXPERIENCE (PART 2) & EDUCATION & PROJECTS ---
     story.append(Paragraph("FILIMON KIROS", name_style))
-    story.append(Paragraph("BACKEND SOFTWARE DEVELOPER   |   <a href=\"mailto:phillipos1212@gmail.com\"><font color=\"#e8533a\">phillipos1212@gmail.com</font></a>", contact_style))
+    story.append(Paragraph("FULL STACK ENGINEER   |   <a href=\"mailto:phillipos1212@gmail.com\"><font color=\"#e8533a\">phillipos1212@gmail.com</font></a>", contact_style))
     story.append(divider)
     story.append(Spacer(1, 8))
 
