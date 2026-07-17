@@ -206,9 +206,10 @@ def generate_pdf(output_path):
     add_section("PROFESSIONAL SUMMARY")
     summary_text = (
         "Highly skilled and detail-oriented Full Stack Engineer with over 2 years of hands-on "
-        "experience building enterprise-grade, scalable, and secure systems in the healthcare and insurance sectors. "
-        "Specializes in Java, Spring Boot, Spring AI, Microservices, React, and Next.js. Proven expertise in "
-        "Docker, Kubernetes, CI/CD pipelines, Cloud Deployment (AWS, GCP, Azure), and Observability & DevOps. "
+        "experience building enterprise-grade, scalable, and secure systems in the healthcare, insurance, and ERP sectors. "
+        "Specializes in Java, Spring Boot, Spring AI, Microservices, React, and Next.js, with additional expertise in "
+        "Odoo ERP (versions 17, 18 & 19) custom module development and Bahmni-Odoo hospital ERP deployments. "
+        "Proven expertise in Docker, Kubernetes, CI/CD pipelines, Cloud Deployment (AWS, GCP, Azure), and Observability & DevOps. "
         "Strong track record of delivering impactful software solutions that serve millions of users across Ethiopia."
     )
     story.append(Paragraph(summary_text, body_style))
@@ -219,9 +220,10 @@ def generate_pdf(output_path):
     skills_data = [
         [Paragraph("<b>Programming Languages:</b>", body_style), Paragraph("Java, Python, JavaScript (ES6+), TypeScript, SQL", body_style)],
         [Paragraph("<b>Frameworks & Libraries:</b>", body_style), Paragraph("Spring Boot, Spring AI, Spring Security, Spring Cloud, React, Next.js", body_style)],
+        [Paragraph("<b>ERP & Business Systems:</b>", body_style), Paragraph("Odoo 17, 18 & 19 (Custom Module Dev, Manufacturing, Inventory, POS, Accounting, HR), Bahmni EMR", body_style)],
         [Paragraph("<b>Databases & Caching:</b>", body_style), Paragraph("PostgreSQL, MySQL, MongoDB, Redis, SQL Server", body_style)],
         [Paragraph("<b>DevOps & Observability:</b>", body_style), Paragraph("Docker, Kubernetes, CI/CD (GitHub Actions, Azure DevOps), Prometheus, Grafana", body_style)],
-        [Paragraph("<b>Cloud & Interop:</b>", body_style), Paragraph("AWS, GCP, Azure, HL7 FHIR, OpenFn Integration Platform, REST APIs, Chapa API", body_style)]
+        [Paragraph("<b>Cloud & Interop:</b>", body_style), Paragraph("AWS, GCP, Azure, HL7 FHIR, OpenFn Integration Platform, REST APIs, Chapa API, Telebirr API", body_style)]
     ]
     skills_table = Table(skills_data, colWidths=[130, 385])
     skills_table.setStyle(TableStyle([
@@ -276,7 +278,9 @@ def generate_pdf(output_path):
 
     exp_bullets_p2 = [
         "Deployed and customized the open-source <b>Bahmni EMR</b> system (OpenMRS, OpenELIS, and Odoo ERP components) for Bishoftu and Wukro hospitals, configuring them to hospital-specific clinical workflows.",
-        "Integrated the <b>Chapa Digital Payment Gateway</b> into hospital EMR workflows at St. Peter Hospital, St. Paul Hospital (Millennium Medical College), and Adama General Hospital, streamlining patient payment processing."
+        "Integrated the <b>Chapa Digital Payment Gateway</b> into Bahmni-Odoo hospital EMR workflows at St. Peter Hospital, St. Paul Hospital (Millennium Medical College), and Adama General Hospital, streamlining patient billing and payment processing.",
+        "Integrated <b>Telebirr (Ethio Telecom MiniApp & USSD)</b> with Bahmni-Odoo across multiple hospitals, enabling patients to settle hospital bills via Ethiopia's leading mobile money platform.",
+        "Developed custom <b>Odoo ERP modules</b> (versions 17, 18 & 19) for clients across manufacturing, pharmacy, hospitality, and multi-industry sectors — including manufacturing MRP for Domain Aluminium (Adama), pharmacy management for Kenema Pharmacies government network (54+ branches), hotel ERP for Romanat Hotel (Addis Ababa), and a three-in-one administrative ERP combining Construction, Import/Export, and School management."
     ]
     for bullet in exp_bullets_p2:
         story.append(Paragraph(f"• {bullet}", bullet_style))
@@ -338,6 +342,63 @@ def generate_pdf(output_path):
     for bullet in proj_bullets:
         story.append(Paragraph(f"• {bullet}", bullet_style))
     story.append(Spacer(1, 6))
+
+    # --- ODOO ERP PROJECTS ---
+    add_section("ODOO ERP PROJECTS")
+
+    odoo_intro = (
+        "Custom Odoo module development across multiple industries on Odoo versions 17, 18 & 19, "
+        "working as part of a development team to build and customize domain-specific ERP modules."
+    )
+    story.append(Paragraph(odoo_intro, body_style))
+    story.append(Spacer(1, 4))
+
+    odoo_projects = [
+        (
+            "Aluminium Manufacturing ERP",
+            "Domain Aluminium Manufacturing — Adama, Ethiopia",
+            "Odoo 17 | Testing Phase",
+            "Custom manufacturing ERP covering production planning, raw material inventory, work order management, quality control, and manufacturing reporting (MRP, Inventory, Purchase, Quality modules)."
+        ),
+        (
+            "Kenema Pharmacies Management System v2",
+            "Government — Kenema Pharmacies, Addis Ababa (54+ Branches)",
+            "Odoo 17 | Deployed",
+            "Multi-branch pharmacy management system for the government-owned Kenema pharmacy network, handling inventory, prescription tracking, stock replenishment, and sales reporting across 54+ branches."
+        ),
+        (
+            "Romanat Hotel Management System",
+            "Romanat Hotel — Addis Ababa, Ethiopia",
+            "Odoo 18 | Deployed",
+            "Full hotel ERP covering reservations, front-desk operations, housekeeping, billing, and financial reporting (Hotel, POS, Accounting, HR modules)."
+        ),
+        (
+            "Triple-Domain Administrative ERP",
+            "Multi-Industry Client — Ethiopia",
+            "Odoo 19 | Deployed",
+            "Three-in-one administrative ERP integrating Construction project management, Import/Export trade operations, and School administrative management into a single unified platform."
+        ),
+    ]
+
+    for proj_title, proj_client, proj_meta, proj_desc in odoo_projects:
+        # Project title + meta row
+        odoo_proj_row = [
+            [Paragraph(f"<b>{proj_title}</b>", item_title_style), Paragraph(proj_meta, item_meta_right_style)],
+            [Paragraph(proj_client, item_meta_style), Paragraph("", item_meta_style)]
+        ]
+        odoo_proj_table = Table(odoo_proj_row, colWidths=[315, 200])
+        odoo_proj_table.setStyle(TableStyle([
+            ('VALIGN', (0,0), (-1,-1), 'TOP'),
+            ('LEFTPADDING', (0,0), (-1,-1), 0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 0),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+        ]))
+        story.append(odoo_proj_table)
+        story.append(Paragraph(f"• {proj_desc}", bullet_style))
+        story.append(Spacer(1, 4))
+
+    story.append(Spacer(1, 4))
 
     # --- CERTIFICATIONS & SOFT SKILLS ---
     add_section("CERTIFICATIONS & SOFT SKILLS")

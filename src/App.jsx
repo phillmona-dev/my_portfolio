@@ -5,8 +5,9 @@ import Navbar   from './components/Navbar';
 import Hero     from './components/Hero';
 import About    from './components/About';
 import TechStack from './components/TechStack';
-import Projects  from './components/Projects';
-import Interop   from './components/Interop';
+import Projects      from './components/Projects';
+import OdooProjects from './components/OdooProjects';
+import Interop       from './components/Interop';
 import Contact   from './components/Contact';
 import Footer    from './components/Footer';
 import AiChat    from './components/AiChat';
@@ -42,6 +43,7 @@ export default function App() {
         <About />
         <TechStack />
         <Projects />
+        <OdooProjects />
         <Interop />
         <Contact />
       </main>

@@ -6,6 +6,7 @@ const navItems = [
   { label: 'About', to: 'about' },
   { label: 'Tech Stack', to: 'tech' },
   { label: 'Projects', to: 'projects' },
+  { label: 'Odoo ERP', to: 'odoo' },
   { label: 'Interop', to: 'interop' },
   { label: 'Contact', to: 'contact' },
 ];

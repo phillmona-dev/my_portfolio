@@ -11,6 +11,7 @@ const techItems = [
   { icon: '🐘', name: 'PostgreSQL & MySQL', color: '#336791', level: 78 },
   { icon: '📡', name: 'REST API', color: '#e8533a', level: 92 },
   { icon: '🔌', name: 'OpenFn & Interop', color: '#e8533a', level: 80 },
+  { icon: '🟣', name: 'Odoo ERP (17–19)', color: '#714b67', level: 82 },
 ];
 
 const tickerItems = [...techItems, ...techItems];
