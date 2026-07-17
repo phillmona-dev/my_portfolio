@@ -11,7 +11,7 @@ const techItems = [
   { icon: '🐘', name: 'PostgreSQL & MySQL', color: '#336791', level: 78 },
   { icon: '📡', name: 'REST API', color: '#e8533a', level: 92 },
   { icon: '🔌', name: 'OpenFn & Interop', color: '#e8533a', level: 80 },
-  { icon: '🟣', name: 'Odoo ERP (17–19)', color: '#714b67', level: 82 },
+  { icon: 'https://cdn.simpleicons.org/odoo/714b67', name: 'Odoo ERP', color: '#714b67', level: 82, isImg: true },
 ];
 
 const tickerItems = [...techItems, ...techItems];
@@ -24,7 +24,10 @@ export default function TechStack() {
         <div className="ticker-inner">
           {tickerItems.map((item, i) => (
             <span className="ticker-item" key={i}>
-              <span style={{ fontSize: '1.3rem' }}>{item.icon}</span>
+              {item.isImg
+                ? <img src={item.icon} alt={item.name} style={{ width: '1.2rem', height: '1.2rem', objectFit: 'contain' }} />
+                : <span style={{ fontSize: '1.3rem' }}>{item.icon}</span>
+              }
               {item.name}
               <span style={{ color: 'var(--border)', margin: '0 4px' }}>•</span>
             </span>
@@ -45,8 +48,11 @@ export default function TechStack() {
           <div className="tech-grid">
             {techItems.map((tech, i) => (
               <div className="tech-card" key={i} id={`tech-${tech.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                <div className="tech-icon" style={{ fontSize: '2rem' }}>
-                  {tech.icon}
+              <div className="tech-icon" style={{ fontSize: '2rem' }}>
+                  {tech.isImg
+                    ? <img src={tech.icon} alt={tech.name} style={{ width: '2rem', height: '2rem', objectFit: 'contain' }} />
+                    : tech.icon
+                  }
                 </div>
                 <span className="tech-name">{tech.name}</span>
                 <div className="tech-level">
